@@ -308,7 +308,7 @@ const serve = gulp.series(
 );
 
 
-/*
+/*e
  * Deploy To gitHubPages
  *
  * Serve the deployable folder watch for changes and start a dev server
@@ -316,7 +316,9 @@ const serve = gulp.series(
 
 export function githubPages() {
   return gulp.src([paths.appRoot.dest + '**/*.*', paths.appRoot.dest + 'CNAME'])
-    .pipe($.ghPages());
+    .pipe($.ghPages({
+      branch: "master"
+    }));
 }
 
 
