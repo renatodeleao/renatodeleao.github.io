@@ -1,0 +1,79 @@
+/*
+    UTILITIES.HELPERS
+    ----
+    
+==================================================== */
+
+/* FLOAT CLEARANCE*/
+.u-cf {
+	@include clearfix();
+}
+
+
+/* 
+	SCREEN READERS ONLY
+
+	visually hide text but kepp it accessible to screen readers 
+*/
+.u-sr-only {
+	@include hidden-visually();
+}
+
+
+/* Use when needed minher */
+.u-flex-min-height-fix{
+	display:flex;
+	flex-direction: column;
+}
+
+
+[class*="is-wireframed"]:before{
+	content: " ";
+	top:0;
+	left:0;
+	position: absolute;
+	height:100%;
+	width:100%;
+	border: 1px solid getAppColor(grayscale, 'darksmoke');
+	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' style='stroke:#e1e1e1;stroke-width:1px;vector-effect:non-scaling-stroke;' /><line x1='0' y1='100' x2='100' y2='0' style='stroke:#e1e1e1;stroke-width:1px;vector-effect:non-scaling-stroke;' /></svg>");
+    background-repeat: no-repeat;
+    background-color: getAppColor(grayscale, 'heaven');
+    background-position:center center;
+    background-size: 100% 100%, auto;
+}
+
+.is-wireframed-inverse:before{
+	background-color: white;
+}
+
+.is-wireframed-alt:before{
+	border-radius: 50%;
+	background-color: getAppColor(grayscale, 'smoke');
+}
+
+.is-dotted{
+	&:after{
+		background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+	}
+}
+/*
+	TEXT ALIGNMENT
+	----
+*/
+.u-text-center{ text-align: center; }
+
+//default is mobile first, so propagate from small up
+.u-text-center--\@sm {
+	@include mappy-bp(sm) {
+		text-align: center;
+	}
+}
+
+//-down suffix indicate a specif style for a reduced breakpoint case
+.u-text-center--\@sm-down {
+	@include mappy-bp(max sm) {
+		text-align: center;
+	}
+}
+
+.u-no-m-b{ margin-bottom: 0px !important;}

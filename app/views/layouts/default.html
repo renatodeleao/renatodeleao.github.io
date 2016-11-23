@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    {{> _head}}
+  </head>
+  <body data-context="{{page}}">
+    <div class="o-app" id="app">
+      <!--site header-->
+  		{{> _header }}
+  	  <main class="o-main" role="main">
+        {{> body}}
+      </main>
+      <!--site footer-->
+      {{> _footer }}
+    </div>
+
+    <!--scripts-->
+    <script src="./scripts/app.js"></script>
+    {{> _google_analytics}}
+  </body>
+</html>

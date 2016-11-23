@@ -1,0 +1,257 @@
+/*
+    OBJECTS.GRID
+    ----
+
+
+    an float free, inline-block grid,
+    with an optional flexbox flavour.
+
+    usage:
+
+    <div class="o-grid">
+		<div class="o-grid__row">
+			<div class="o-grid__item o-grid__iteridm--@xs10-@sm6-@md4-@lg5"></div>
+		</div>
+	</div>rid
+
+	requires:
+		border-box box-sizing or it will horizonal
+		overflow;
+
+* ==================================================== */
+
+$grid-columns: 12;
+$grid-gutter: $s-baseline;
+
+.o-grid,
+.o-grid__row,
+.o-grid__item{
+	box-sizing: border-box;
+}
+
+.o-grid{
+	position: relative;
+	width: 100%;
+	display: block;
+
+	&--fluid{
+		position: relative;
+		padding: 0 $grid-gutter / 2;
+	}
+
+
+	&--collapse{
+		padding: 0;
+	}
+	
+	//requires being inside o-container wrapper div
+	&--no-rows{
+		width: auto;
+		margin:{
+			left: -($grid-gutter/2);
+			right: -($grid-gutter/2);
+		};
+	}
+
+	&--flex-no-rows{
+		margin:{
+			left: -($grid-gutter/2);
+			right: -($grid-gutter/2);
+		};
+
+		width: auto;
+		display: flex;
+		flex: 0 1 auto;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+
+	/*
+		GRID ROWS
+	*/
+	.o-grid__row {
+		position: relative;
+		display: block;
+		margin:{
+			left: -($grid-gutter/2);
+			right: -($grid-gutter/2);
+		};
+
+		.o-grid--collapse & {
+			margin:{
+				left: 0;
+				right: 0;
+			};
+		}
+
+		.o-grid--flex &,
+		.o-grid--flex-no-rows & {
+			display: flex;
+			flex: 0 1 auto;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			&[data-layout*="reverse"]{
+				flex-direction: row-reverse
+			}
+		}
+
+		&[data-layout]{
+			width: auto;
+		}
+	}
+
+	ul.o-grid__row{
+		margin-top: 0px;
+		margin-bottom: 0px;
+		list-style: none;
+		padding:0;
+	}
+
+
+
+	/*
+		GRID ITEMS
+	*/
+	.o-grid__item {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		font-size: 1rem;
+		width: 100%;
+		padding: 0 $grid-gutter / 2;
+
+		.o-grid--collapse & {
+			padding: {
+				left: 0;
+				right: 0;
+			};
+		}
+
+		// Flex flavor
+		.o-grid--flex & {
+		  	flex: 0 0 auto;
+		  	display: flex;
+		  	flex-direction: column;
+		}
+	}
+
+
+	/* Generate columns and offsets*/
+	// Column sizingi mobile-first based on presence of class responsive strings
+		@for $i from 1 through $grid-columns {
+			$widthCalc:  100% * $i / $grid-columns;
+		  	.o-grid__item[class*="\@xs#{$i}"] {
+		  		width: $widthCalc;
+
+		  		.o-grid--flex & {
+		  			flex-basis: $widthCalc;
+					max-width:  $widthCalc;
+		  		}
+		  	}
+
+		  	.o-grid__item--\@xs-offset-#{$i},
+		  	[data-self-align*="offset-#{$i}\@xs"]{
+				margin-left: $widthCalc;
+			}
+		}
+
+		// sm breakpoint
+		@include mappy-bp(sm){
+			@for $i from 1 through $grid-columns {
+				$widthCalc:  100% * $i / $grid-columns;
+
+			  	.o-grid__item[class*="\@sm#{$i}"] {
+			  		width: $widthCalc;
+
+			  		.o-grid--flex & {
+			  			flex-basis: $widthCalc;
+						max-width:  $widthCalc;
+			  		}
+			  	}
+
+			  	.o-grid__item--\@sm-offset-#{$i},
+			  	[data-self-align*="offset-#{$i}\@sm"]{
+					margin-left: $widthCalc;
+			  	}
+			}
+		}
+
+		// md breakpoint
+		@include mappy-bp(md){
+			@for $i from 1 through $grid-columns {
+				$widthCalc:  100% * $i / $grid-columns;
+
+			  	.o-grid__item[class*="\@md#{$i}"] {
+			  		width: $widthCalc;
+
+			  		.o-grid--flex & {
+			  			flex-basis: $widthCalc;
+						max-width:  $widthCalc;
+			  		}
+			  	}
+
+			  	.o-grid__item--\@md-offset-#{$i},
+			  	[data-self-align*="offset-#{$i}\@md"]{
+					margin-left: $widthCalc;
+			  	}
+
+			}
+		}
+
+		//lg breakpoint
+		@include mappy-bp(lg){
+			@for $i from 1 through $grid-columns {
+				$widthCalc:  100% * $i / $grid-columns;
+
+			  	.o-grid__item[class*="\@lg#{$i}"] {
+			  		width: $widthCalc;
+
+			  		.o-grid--flex & {
+			  			flex-basis: $widthCalc;
+						max-width:  $widthCalc;
+			  		}
+			  	}
+
+			  	.o-grid__item--\@lg-offset-#{$i},
+			  	[data-self-align*="offset-#{$i}\@lg"]{
+					margin-left: $widthCalc;
+			  	}
+		  	}
+		}
+
+
+.is-first-\@xs-down{
+	@include mappy-bp(max sm){
+		order: -1;
+	}
+}
+
+.is-last-\@xs-down{
+	@include mappy-bp(max sm){
+		order: 9999;
+	}
+}
+
+.is-last-\@sm-down{
+	@include mappy-bp(max sm){
+		order: 9999;
+	}
+}
+
+[data-align*="middle"]{ align-items: center; }
+[data-align*="center"]{ justify-content: center; }
+[data-align*="baseline"]{ align-items: baseline; }
+
+[data-self-align*="middle"]{
+	align-self: middle;
+}
+
+
+[data-self-align*="first\@sm-down"]{
+	@include mappy-bp(max sm){
+		order: -1;
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"base": {
+		"app_name": "Home of the Walking Lion",
+		"title": "Renato de Leão — Cross-media Designer & Front-end Developer",
+		"keywords": "Designer, Cross-media designer, ui, ux, UI/UX, web developer, web, frontend, front-end, developer",
+		"author": "Renato de Leão",
+		"description": "Home of the Walking Lion"
+	},
+	"og": {
+		"title": "Renato de Leão — Cross-media Designer & Front-end Developer",
+		"site_name": "Renato de Leão — Cross-media Designer & Front-end Developer",
+		"descriptions": "Home of the Walking Lion",
+		"image": "https://renatodeleao.com/assets/images/logo.png",
+		"url": "https://renatodeleao.com/"
+	},
+	"social": {
+		"twitter_card": "absolute_path_to_image",
+		"twitter_image_alt": "text",
+		"fb_app_id": "@ohsimtabem",
+		"fb_twitter_site": "@ohsimtabem"
+	},
+	"social_handlers": {
+		"twitter": "@ohsimtabem",
+		"instagram": "@ohsimtabem",
+		"facebook": "renatodeleao",
+		"linkedin": "renatodeleao",
+		"vimeo": "renatodeleao",
+		"github": "renatodeleao"
+	}
+}

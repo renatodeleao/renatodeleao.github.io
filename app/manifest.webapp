@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "renatodeleao",
+  "launch_path": "/index.html",
+  "description": "Home of the Walking Lion",
+  "icons": {
+    "128": "assets/images/favicons/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "Renato de Leão",
+    "url": "https://renatodeleao.com"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "renatodeleao",
+      "description": "Home of the Walking Lion"
+    }
+  }
+}
