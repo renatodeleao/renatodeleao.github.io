@@ -68,6 +68,7 @@
       &--secondary {
          font-family: $s-secondary-font-family;
          font-size: 0.875rem;
+         height: 44px;
          @include mappy-bp(lg){
             font-size: 0.75rem;
          }
@@ -82,12 +83,12 @@
                top: 1px solid getAppColor(grayscale, faint);
                right: 1px solid getAppColor(grayscale, faint);
             };
-            padding-left: 56px + $s-baseline;
+            padding-left: 56px + $s-baseline /2;
          }
 
          @include mappy-bp(md) { 
             height: 60px;
-            padding-left: 60px + $s-baseline;
+            padding-left: 60px + $s-baseline / 2;
          }
          
       }
@@ -110,12 +111,14 @@
       justify-content: center;
       align-items: center;
       display: flex;
-      left: -1px;
+      top:-1px;
       overflow: hidden;
       flex-shrink: 0;
       background: getAppColor(primary);
       
       @include mappy-bp(sm){
+         top:0;
+         left: -1px;
          width: 56px;
          height: 56px;
       }

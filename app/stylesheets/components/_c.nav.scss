@@ -5,11 +5,10 @@
 	font-family: $s-secondary-font-family;
 	letter-spacing: 3px;	
 	font-weight: 700;
-	font-size: 0.875rem;
 
-	@include mappy-bp(lg){
-		font-size: 0.75rem;
-	}
+	font-size: 0.75rem;
+	overflow: auto;
+	-webkit-oveflow-scrolling: touch;
 }
 
 .c-nav__item,
@@ -17,9 +16,13 @@
 	display: flex;
 }
 
+.c-nav__item{
+	flex-shrink: 0;
+}
+
 .c-nav__link{
-	padding: 0 $s-baseline/2;
 	align-items: center;
+	white-space: nowrap;
 	
 	&.is-active,
 	&:hover{
@@ -27,6 +30,7 @@
 	}
 
 	.c-site-header__nav & {
+		padding: 0 $s-baseline/2;
 		@include mappy-bp(sm){
 			padding: $s-baseline/2 0;
 		}
@@ -42,5 +46,9 @@
 }
 
 .c-nav--secondary{
-	color: getAppColor(grayscale, lightest);
+	width: 100%;
+
+	.c-nav__item{
+		padding: 0 $s-baseline/2;
+	}
 }

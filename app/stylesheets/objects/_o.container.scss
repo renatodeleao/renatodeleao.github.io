@@ -34,13 +34,6 @@ $container-sizes:(
 			max-width: $size;
 		}
 	}
-	
-	@include mappy-bp(sm){
-		padding-left: 68px;
-	}
-	@include mappy-bp(md){
-		padding-left: 72px;
-	}
 
 	
 	&--fluid{
@@ -58,4 +51,25 @@ $container-sizes:(
 		display: flex;
 		flex-direction: column;
 	}
+}
+
+.o-page{
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+
+	@each $breakpoint, $size in $container-sizes{
+		@include mappy-bp($breakpoint){
+			max-width: $size;
+		}
+	}
+	
+	@include mappy-bp(sm){
+		padding-left: 56px + $s-baseline/2;
+	}
+	@include mappy-bp(md){
+		padding-left: 60px + $s-baseline/2;
+	}
+
 }

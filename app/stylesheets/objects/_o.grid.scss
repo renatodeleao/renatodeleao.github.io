@@ -260,3 +260,7 @@ $grid-gutter: $s-baseline;
 		order: -1;
 	}
 }
+
+[data-self-align*="shy-right"]{
+	margin-right: auto;
+}
