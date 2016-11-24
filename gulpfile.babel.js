@@ -33,7 +33,7 @@ const paths = {
     dest: 'dist/assets/images/'
   },
   fonts: {
-    src:  'app/assets/fonts/**/{*.woff, *.woff2}',
+    src:  'app/assets/fonts/**/**/*',
     dest: 'dist/assets/fonts/'
   },
   views: {
