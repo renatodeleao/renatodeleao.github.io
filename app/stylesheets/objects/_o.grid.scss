@@ -54,6 +54,10 @@ $grid-gutter: $s-baseline;
 	}
 
 	&--flex-rowless{
+		padding:{
+			left: 0;
+			right: 0;
+		}
 		margin:{
 			left: -($grid-gutter/2);
 			right: -($grid-gutter/2);
