@@ -1,0 +1,133 @@
+/*
+    COMPONENT.SITE-HEADER
+    ----
+    
+* ==================================================== */
+
+.c-site-header {
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+   left:0;
+   z-index: 1000;
+	
+	@include mappy-bp(sm) {
+      bottom: auto;
+		top: 0;
+	}	
+
+	> .o-container {
+      @include mappy-bp(max sm) { padding: 0 }
+
+		@include mappy-bp(max md) {
+			width: 100%;
+         max-width: none;
+		}
+	}
+}
+
+	.c-site-header__block {
+      position: relative;
+      height: 48px;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+
+      @include mappy-bp(sm) {
+         position: absolute;
+      }
+
+      &--primary {
+         z-index: 2;
+
+         @include mappy-bp(max sm) {
+             border: {
+               top: 1px solid getAppColor(grayscale, faint);
+               bottom: 1px solid getAppColor(grayscale, faint);
+            };
+         }
+         @include mappy-bp(sm) {
+            flex-direction: row-reverse;
+            left:0;
+            top:0;
+            width: 56px;
+            height: 100vh;
+            writing-mode: vertical-lr;
+            border: {
+               left: 1px solid getAppColor(grayscale, faint);
+               right: 1px solid getAppColor(grayscale, faint);
+            };
+         }
+         
+         @include mappy-bp(md) { 
+            width: 60px;
+         }
+
+      }
+
+      &--secondary {
+         font-family: $s-secondary-font-family;
+         font-size: 0.875rem;
+         @include mappy-bp(lg){
+            font-size: 0.75rem;
+         }
+         
+         @include mappy-bp(sm) {
+            left:0;
+            top:100vh;
+            width: 100%;
+            height: 56px;
+            transform: translateY(-100%);
+             border: {
+               top: 1px solid getAppColor(grayscale, faint);
+               right: 1px solid getAppColor(grayscale, faint);
+            };
+            padding-left: 56px + $s-baseline;
+         }
+
+         @include mappy-bp(md) { 
+            height: 60px;
+            padding-left: 60px + $s-baseline;
+         }
+         
+      }
+   }
+   
+   //rotate elements in vertical mode
+   .c-site-header__nav{
+      @include mappy-bp(sm){
+         transform: rotate(180deg);
+      }
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+   }
+
+   .c-site-header__logo{
+      writing-mode: initial;
+      position: relative;
+      width: 48px;
+      height: 48px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      left: -1px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: getAppColor(primary);
+      
+      @include mappy-bp(sm){
+         width: 56px;
+         height: 56px;
+      }
+      @include mappy-bp(md){
+         width: 60px;
+         height: 60px;
+      }
+ 
+      img{
+         width: 110%;
+         max-width: none;
+         margin-left: -5%;
+         mix-blend-mode: screen;
+      }
+   }

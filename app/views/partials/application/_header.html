@@ -1,12 +1,32 @@
 <header class="o-app__header c-site-header">
 	<div class="o-container">
-		<div class="c-app-header__block">
-			<h1 class="c-logo-semantic-wrap">
-				<a href="" title="home">
-					Logo
+      {{!-- Primary  --}}
+		<nav class="c-site-header__block c-site-header__block--primary">
+			<h1 class="c-logo-semantic-wrap c-site-header__logo">
+				<a href="" title="home" class="c-logo">
 					<span class="u-sr-only">Renato de Leão</span>
+               <img src="assets/images/profile.jpg" alt="Renato's profile picture">
 				</a>
 			</h1>
+         <ul class="c-nav c-nav--primary c-site-header__nav">
+            <li class="c-nav__item"><a class="c-nav__link"><s>About</s></a></li>
+            <li class="c-nav__item"><a class="c-nav__link"><s>Work</s></a></li>
+            <li class="c-nav__item"><a class="c-nav__link"><s>Thoughts</s></a></li>
+            <li class="c-nav__item"><a class="c-nav__link"><s>Lab</s></a></li>
+         </ul>
+		</nav>
+		
+		{{!-- Scondary  --}}
+		<div class="c-site-header__block c-site-header__block--secondary">
+
+			<a class="c-link c-link--selected" href="mailto:{{profile.id.email}}" title="home" data-self-align="middle"><span>Hello Leão!</span></a>
+   
+         <ul class="c-nav c-nav--secondary">
+            
+            <li class="c-nav__item"><a class="c-nav__link"  href="https://twitter.com/{{meta.social_handlers.github}}"><span>GitHub</span></a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="https://twitter.com/{{meta.social_handlers.twitter}}"><span>Twitter</span></a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="https://instagram.com/{{meta.social_handlers.instagram}}"><span>Instagram</span></a></li>
+         </ul>
 		</div>
 	</div>
 </header>

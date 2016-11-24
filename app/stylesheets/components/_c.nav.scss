@@ -1,0 +1,46 @@
+.c-nav{
+	position: relative;
+	list-style: none;
+	display: flex;
+	font-family: $s-secondary-font-family;
+	letter-spacing: 3px;	
+	font-weight: 700;
+	font-size: 0.875rem;
+
+	@include mappy-bp(lg){
+		font-size: 0.75rem;
+	}
+}
+
+.c-nav__item,
+.c-nav__link{
+	display: flex;
+}
+
+.c-nav__link{
+	padding: 0 $s-baseline/2;
+	align-items: center;
+	
+	&.is-active,
+	&:hover{
+		color: getAppColor(primary);
+	}
+
+	.c-site-header__nav & {
+		@include mappy-bp(sm){
+			padding: $s-baseline/2 0;
+		}
+
+		@include mappy-bp(lg){
+			padding: $s-baseline 0;
+		}
+	}
+}
+
+.c-nav--primary{
+	
+}
+
+.c-nav--secondary{
+	color: getAppColor(grayscale, lightest);
+}
