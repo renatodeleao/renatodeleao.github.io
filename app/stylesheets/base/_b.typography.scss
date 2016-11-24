@@ -8,34 +8,43 @@
 //@include font-face($font-family: 'FontNAME', $file-path: 'fontPath', $font-weight: '500', $font-style: 'normal', $RoR: false);
 
 @include font-face(
-	$font-family: 'Poppins', 
-	$file-path: '../assets/fonts/Poppins/600/poppins-semibold-webfont', 
-	$font-weight: '600', $font-style: 'normal', 
+	$font-family: 'Hans Grotesque', 
+	$file-path: '../assets/fonts/HansGrotesque/400/hans-grotesque-webfont', 
+	$font-weight: '400', $font-style: 'normal', 
 	$RoR: false, 
 	$legacy: false );
 
 @include font-face(
-	$font-family: 'Poppins', 
-	$file-path: '../assets/fonts/Poppins/700/poppins-bold-webfont',
-	$font-weight: '700', 
-	$font-style: 'normal', 
+	$font-family: 'Bebas Neue', 
+	$file-path: '../assets/fonts/HansGrotesque/700/bebas-neue-bold-webfont', 
+	$font-weight: '700', $font-style: 'normal', 
 	$RoR: false, 
-	$legacy: false);
+	$legacy: false );
 
+html{
+	font-size: 100%;
 
+	@include mappy-bp(md){
+		font-size: 112.5%;
+	}
+}
 body{
-	font: normal 1rem/1.5 "Helvetica Neue", Helvetica, sans-serif;
+	font: normal 1rem/1.5555 Hans Grotesque, "Helvetica Neue", Helvetica, sans-serif;
 	letter-spacing: -0.01px;
 	color: getAppColor('grayscale', 'base');
 	 -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+  	font-kerning: normal;
     font-weight: 400;
     font-weight: normal;
 
+    // @include mappy-bp(md){
+    // 	font-size: 1.125rem;
+    // }
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: Poppins, Helvetica Neue, Helvetica, -apple-system, Roboto, sans-serif;
-}
 
+::selection { background: getAppColor(primary); color: white; }
 
