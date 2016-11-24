@@ -6,3 +6,45 @@
 		position: relative;
 		z-index: 1;
 	}
+
+
+.c-link--underlined{
+	position: relative;
+	display: inline-block;
+	color: getAppColor(primary);
+	transition: all 0.2s;
+
+	&:before{
+		content: " ";
+		display: block;
+	    position: absolute;
+	    z-index: -1;
+	    width: 100%;
+		height: 2px;
+		bottom: 0px;
+	   	background: currentColor;
+	   	transform: scaleX(0);
+	   	transition: transform 0.2s;
+	   	transform-origin: right center;
+	   
+	}
+
+	&:hover{
+		color: getAppColor(primary);
+		&:before{
+			transform-origin: left center;
+			transform: scaleX(1);
+		}
+	}
+}
+
+.c-link--selected{
+	padding: 4px 4px 0px 4px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	&,
+	&:hover{
+		background: getAppColor(primary);
+		color: white;
+	}
+}

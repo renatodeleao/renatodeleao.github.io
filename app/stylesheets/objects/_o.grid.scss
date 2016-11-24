@@ -33,10 +33,10 @@ $grid-gutter: $s-baseline;
 	position: relative;
 	width: 100%;
 	display: block;
+	padding: 0 $grid-gutter / 2;
 
 	&--fluid{
 		position: relative;
-		padding: 0 $grid-gutter / 2;
 	}
 
 
@@ -53,7 +53,7 @@ $grid-gutter: $s-baseline;
 		};
 	}
 
-	&--flex-no-rows{
+	&--flex-rowless{
 		margin:{
 			left: -($grid-gutter/2);
 			right: -($grid-gutter/2);
@@ -72,6 +72,7 @@ $grid-gutter: $s-baseline;
 		GRID ROWS
 	*/
 	.o-grid__row {
+		font-size: 0px;
 		position: relative;
 		display: block;
 		margin:{
@@ -246,7 +247,7 @@ $grid-gutter: $s-baseline;
 [data-align*="baseline"]{ align-items: baseline; }
 
 [data-self-align*="middle"]{
-	align-self: middle;
+	align-self: center;
 }
 
 

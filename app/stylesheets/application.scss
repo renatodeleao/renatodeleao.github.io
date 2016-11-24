@@ -55,7 +55,9 @@
 @import "components/c.link";
 @import "components/c.button";
 @import "components/c.section";
+@import "components/c.nav";
 @import "components/c.footer";
+@import "components/c.site-header";
 
 
 //SCOPES
@@ -63,3 +65,4 @@
 //UTILITIES
 @import "utilities/u.coloring";
 @import "utilities/u.helpers";
+@import "utilities/u.typescale";

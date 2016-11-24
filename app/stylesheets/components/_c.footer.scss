@@ -1,7 +1,12 @@
 .c-footer{
 	position: relative;
 	background: white;
-	border-top: 1px solid getAppColor(grayscale, darksmoke);
+	> .o-container{
+		border: 1px solid getAppColor(grayscale, faint);
+		border-bottom: 0px;
+	}
+}
+
 
 	.c-footer__block{
 		text-align: center;
@@ -12,10 +17,9 @@
 			margin:0;
 		}
 
-		&:last-child{
-			@include mappy-bp(sm){
-				text-align: right;
-			}
-		}
+		// &:last-child{
+		// 	@include mappy-bp(sm){
+		// 		text-align: right;
+		// 	}
+		// }
 	}
-}

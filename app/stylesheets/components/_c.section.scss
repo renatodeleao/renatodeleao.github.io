@@ -8,8 +8,21 @@
 	position: relative;
 	width: 100%;
 	padding: {
-		top: $s-baseline * 2;
-		bottom: $s-baseline * 2;
+		top: $s-baseline;
+		bottom: $s-baseline;
+	};
+
+	&:first-child{
+		padding: {
+			top: $s-baseline * 2;
+		};
+	}
+
+	
+	&:last-child{
+		padding: {
+			bottom: $s-baseline * 2;
+		};
 	}
 }
 	

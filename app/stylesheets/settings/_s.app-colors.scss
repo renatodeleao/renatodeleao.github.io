@@ -12,33 +12,27 @@
 
 
 $app-colors-maps: (
-    brand: (
-        lighter: #FDE9D7,
-        light: #F9A01B,
-        base: #ED760A
-    ),
     primary:(
-        light: mix(#50B4F3, white, 80%),
-    	base: #50B4F3,
-        dark: #4A90E2,
-        darker: #3072E0
+        light: mix(#396FFC, white, 80%),
+    	base: #396FFC,
+        dark: mix(#396FFC, black, 80%),
     ),
     grayscale:(
-        heaven: #F4F4F4,
+        faint: rgba(0,0,0,0.1),
+        heaven: #F6F6F6,
         lightsmoke: #F1F1F1,
         smoke: #EBEBEB,
         darksmoke: #e1e1e1,
-        lightest: #999999,
+        lightest: #A1A1A1,
         lighter: #555555,
         light: #333333,
-		base: #161616
+		base: #1A1A1A
     ),
     danger: #EC465B,
     success: #00C766,
     info: #6A9EBE,
     warning: #F9A01B
 );
-
 
 $social-media-colors-map: (
     facebook: #365899,

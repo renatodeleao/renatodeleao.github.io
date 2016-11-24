@@ -9,10 +9,10 @@
 $container-sizes:(
 	xxs: 480px,
 	xs: 600px,
-	sm: 720px,
-	sml: 800px,
-	md: 880px,
-	mdl: 960px,
+	sm: 100%,
+	sml: 100%,
+	md: 100%,
+	mdl: 100%,
 	lg: 1080px,
 	xl: 1280px,
 	xxl: 1440px 
@@ -20,6 +20,7 @@ $container-sizes:(
 
 
 .o-container{
+	position: relative;
 	display: block;
 	width: 100%;
 	margin: 0 auto;
@@ -32,6 +33,13 @@ $container-sizes:(
 		@include mappy-bp($breakpoint){
 			max-width: $size;
 		}
+	}
+	
+	@include mappy-bp(sm){
+		padding-left: 68px;
+	}
+	@include mappy-bp(md){
+		padding-left: 72px;
 	}
 
 	

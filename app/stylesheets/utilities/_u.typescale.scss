@@ -1,0 +1,8 @@
+.u-ts-1 {
+	font-size: 1.125rem;
+
+	@include mappy-bp(sm){
+		font-size: 1.7778rem;
+		// line-height: 1.2777;
+	}
+}
