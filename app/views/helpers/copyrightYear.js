@@ -1,7 +1,7 @@
 /*
     Handlebars CopyrightYear Helper
     ----
-    
+
     Usage: {{copyrightYear}}
 
 
@@ -15,6 +15,9 @@
 * ==================================================== */
 
 module.exports = function(options) {
-  var year = new Date().getFullYear();
-  return year;
+  var start =  '2016'
+  var curYear = new Date().getFullYear().toString();
+  var copyRightsString = curYear === start ? start : `${start} - ${curYear}`
+
+  return copyRightsString;
 }
